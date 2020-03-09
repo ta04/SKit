@@ -1,0 +1,10 @@
+.idea
+/product-service/
+/product-service-cli/
+/order-service/
+/order-service-cli/
+/payment-service/
+/payment-service-cli/
+/user-service/
+/user-service-cli/
+/auth-service/

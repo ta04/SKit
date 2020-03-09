@@ -1,0 +1,151 @@
+# docker-compose.yml
+
+version: '3.3'
+services:
+  product-service:
+    restart: always
+    build: ./product-service
+    entrypoint: ["./product-service"]
+    container_name: "product-service"
+    ports:
+      - 50051:50051
+    links:
+      - database
+    depends_on:
+      - database
+    networks:
+      - product-service-tier
+      - backend-tier
+    environment:
+      MICRO_SERVER_ADDRESS: ":50051"
+      MICRO_REGISTRY: mdns
+      DB_NAME: "products"
+      DB_HOST: "database"
+      DB_PORT: "5434"
+      DB_USER: "sleepingnext"
+      DB_PASSWORD: "kevin99123"
+
+  product-service-cli:
+    build: ./product-service-cli
+    entrypoint: ["./product-service-cli"]
+    container_name: "product-service-cli"
+    networks:
+      - product-service-tier
+    environment:
+      MICRO_REGISTRY: mdns
+
+  order-service:
+    restart: always
+    build: ./order-service
+    entrypoint: ["./order-service"]
+    container_name: "order-service"
+    ports:
+      - 50052:50051
+    links:
+      - database
+    depends_on:
+      - database
+    networks:
+      - order-service-tier
+      - backend-tier
+    environment:
+      MICRO_SERVER_ADDRESS: ":50052"
+      MICRO_REGISTRY: mdns
+      DB_NAME: "orders"
+      DB_HOST: "database"
+      DB_PORT: "5434"
+      DB_USER: "sleepingnext"
+      DB_PASSWORD: "kevin99123"
+
+  order-service-cli:
+    build: ./order-service-cli
+    entrypoint: ["./order-service-cli"]
+    container_name: "order-service-cli"
+    networks:
+      - order-service-tier
+    environment:
+      MICRO_REGISTRY: mdns
+
+  payment-service:
+    restart: always
+    build: ./payment-service
+    entrypoint: ["./payment-service"]
+    container_name: "payment-service"
+    ports:
+      - 50051:50051
+    links:
+      - database
+    depends_on:
+      - database
+    networks:
+      - payment-service-tier
+      - backend-tier
+    environment:
+      MICRO_SERVER_ADDRESS: ":50051"
+      MICRO_REGISTRY: mdns
+      DB_NAME: "payments"
+      DB_HOST: "database"
+      DB_PORT: "5434"
+      DB_USER: "sleepingnext"
+      DB_PASSWORD: "kevin99123"
+
+  payment-service-cli:
+    build: ./payment-service-cli
+    entrypoint: ["./payment-service-cli"]
+    container_name: "payment-service-cli"
+    networks:
+      - payment-service-tier
+    environment:
+      MICRO_REGISTRY: mdns
+
+  user-service:
+    restart: always
+    build: ./user-service
+    entrypoint: ["./user-service"]
+    container_name: "user-service"
+    ports:
+      - 50051:50051
+    links:
+      - database
+    depends_on:
+      - database
+    networks:
+      - user-service-tier
+      - backend-tier
+    environment:
+      MICRO_SERVER_ADDRESS: ":50051"
+      MICRO_REGISTRY: mdns
+      DB_NAME: "users"
+      DB_HOST: "database"
+      DB_PORT: "5434"
+      DB_USER: "sleepingnext"
+      DB_PASSWORD: "kevin99123"
+
+  user-service-cli:
+    build: ./user-service-cli
+    entrypoint: ["./user-service-cli"]
+    container_name: "user-service-cli"
+    networks:
+      - user-service-tier
+    environment:
+      MICRO_REGISTRY: mdns
+
+  database:
+    image: postgres:latest
+    ports:
+      - 5434:5432
+    volumes:
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    networks:
+      - product-service-tier
+      - order-service-tier
+      - payment-service-tier
+    environment:
+      POSTGRES_PASSWORD: "kevin99123"
+
+networks:
+  product-service-tier:
+  order-service-tier:
+  payment-service-tier:
+  user-service-tier:
+  backend-tier:

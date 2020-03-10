@@ -40,7 +40,7 @@ CREATE TABLE public.products (
     description character varying(1000) NOT NULL,
     price numeric NOT NULL,
     picture character varying(255) NOT NULL,
-    status boolean NOT NULL
+    status character varying(255) NOT NULL
 );
 
 

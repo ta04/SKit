@@ -59,12 +59,12 @@ CREATE TABLE public.users (
     date_of_birth date NOT NULL,
     address character varying(1000) NOT NULL,
     role character varying(255) NOT NULL,
-    credit_card_number character varying(255),
-    credit_card_type character varying(255),
-    credit_card_expired_month character varying(255),
-    credit_card_expired_year character varying(255),
-    credit_card_cvv character varying(255),
-    status boolean NOT NULL
+    credit_card_number character varying(255) NULL,
+    credit_card_type character varying(255) NULL,
+    credit_card_expired_month character varying(255) NULL,
+    credit_card_expired_year character varying(255) NULL,
+    credit_card_cvv character varying(255) NULL,
+    status character varying(255) NOT NULL
 );
 
 

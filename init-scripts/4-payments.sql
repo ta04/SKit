@@ -38,7 +38,8 @@ CREATE TABLE public.payments (
     id bigint NOT NULL,
     order_id bigint NOT NULL,
     type character(255) NOT NULL,
-    status boolean NOT NULL
+    picture character varying(255) NULL,
+    status character varying(255) NOT NULL
 );
 
 

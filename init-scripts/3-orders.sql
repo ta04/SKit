@@ -37,7 +37,7 @@ CREATE TABLE public.orders (
     id bigint NOT NULL,
     product_id bigint NOT NULL,
     user_id bigint NOT NULL,
-    status boolean NOT NULL
+    status character varying(255) NOT NULL
 );
 
 

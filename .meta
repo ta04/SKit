@@ -9,6 +9,7 @@
     "user-service": "git@github.com:G0tYou/user-service.git",
     "user-service-cli": "git@github.com:G0tYou/user-service-cli.git",
     "auth-service": "git@github.com:SleepingNext/auth-service.git",
-    "auth-service-cli": "git@github.com:SleepingNext/auth-service-cli.git"
+    "auth-service-cli": "git@github.com:SleepingNext/auth-service-cli.git",
+    "api-gateway": "git@github.com:SleepingNext/api-gateway.git"
   }
 }

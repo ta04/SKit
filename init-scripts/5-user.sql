@@ -103,7 +103,7 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 --
 
 COPY public.users (id, first_name, last_name, username, password, email_address, phone_number, date_of_birth, address, role, credit_card_number, credit_card_type, credit_card_expired_month, credit_card_expired_year, credit_card_cvv, status) FROM stdin;
-1	admin	admin	admin	admin	admin@skit.com	081271762836	2020-03-12	Admin's Home	admin	"empty"	"empty"	"empty"	"empty"	"empty"	active
+1	admin	admin	admin	admin	admin@skit.com	081271762836	2020-03-12	Admin's Home	admin	empty	empty	empty	empty	empty	active
 \.
 
 

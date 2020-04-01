@@ -16,14 +16,6 @@ services:
         networks:
         - product-service-tier
         - backend-tier
-        environment:
-            MICRO_SERVER_ADDRESS: ":50051"
-            MICRO_REGISTRY: mdns
-            DB_NAME: "products"
-            DB_HOST: "database"
-            DB_PORT: "5434"
-            DB_USER: "sleepingnext"
-            DB_PASSWORD: "kevin99123"
 
     product-service-cli:
         build: ./product-service-cli
@@ -31,8 +23,6 @@ services:
         container_name: "product-service-cli"
         networks:
         - product-service-tier
-        environment:
-            MICRO_REGISTRY: mdns
 
     order-service:
         restart: always
@@ -48,14 +38,6 @@ services:
         networks:
         - order-service-tier
         - backend-tier
-        environment:
-            MICRO_SERVER_ADDRESS: ":50052"
-            MICRO_REGISTRY: mdns
-            DB_NAME: "orders"
-            DB_HOST: "database"
-            DB_PORT: "5434"
-            DB_USER: "sleepingnext"
-            DB_PASSWORD: "kevin99123"
 
     order-service-cli:
         build: ./order-service-cli
@@ -63,8 +45,6 @@ services:
         container_name: "order-service-cli"
         networks:
         - order-service-tier
-        environment:
-            MICRO_REGISTRY: mdns
 
     payment-service:
         restart: always
@@ -80,14 +60,6 @@ services:
         networks:
         - payment-service-tier
         - backend-tier
-        environment:
-            MICRO_SERVER_ADDRESS: ":50051"
-            MICRO_REGISTRY: mdns
-            DB_NAME: "payments"
-            DB_HOST: "database"
-            DB_PORT: "5434"
-            DB_USER: "sleepingnext"
-            DB_PASSWORD: "kevin99123"
 
     payment-service-cli:
         build: ./payment-service-cli
@@ -95,8 +67,6 @@ services:
         container_name: "payment-service-cli"
         networks:
         - payment-service-tier
-        environment:
-            MICRO_REGISTRY: mdns
 
     user-service:
         restart: always
@@ -112,14 +82,6 @@ services:
         networks:
         - user-service-tier
         - backend-tier
-        environment:
-            MICRO_SERVER_ADDRESS: ":50051"
-            MICRO_REGISTRY: mdns
-            DB_NAME: "users"
-            DB_HOST: "database"
-            DB_PORT: "5434"
-            DB_USER: "sleepingnext"
-            DB_PASSWORD: "kevin99123"
 
     user-service-cli:
         build: ./user-service-cli
@@ -127,8 +89,6 @@ services:
         container_name: "user-service-cli"
         networks:
         - user-service-tier
-        environment:
-            MICRO_REGISTRY: mdns
 
     auth-service:
         restart: always
@@ -140,9 +100,6 @@ services:
         networks:
         - auth-service-tier
         - backend-tier
-        environment:
-            MICRO_SERVER_ADDRESS: ":50051"
-            MICRO_REGISTRY: mdns
 
     auth-service-cli:
         build: ./auth-service-cli
@@ -150,8 +107,6 @@ services:
         container_name: "auth-service-cli"
         networks:
         - auth-service-tier
-        environment:
-            MICRO_REGISTRY: mdns
 
     database:
         image: postgres:latest
@@ -164,8 +119,6 @@ services:
         - order-service-tier
         - payment-service-tier
         - user-service-tier
-        environment:
-            POSTGRES_PASSWORD: "kevin99123"
 
 networks:
     product-service-tier:

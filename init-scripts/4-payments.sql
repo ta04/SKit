@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 11.7 (Ubuntu 11.7-1.pgdg18.04+1)
--- Dumped by pg_dump version 11.7 (Ubuntu 11.7-1.pgdg18.04+1)
+-- Dumped from database version 11.7 (Ubuntu 11.7-2.pgdg18.04+1)
+-- Dumped by pg_dump version 11.7 (Ubuntu 11.7-2.pgdg18.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -21,24 +21,14 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: payments; Type: DATABASE; Owner: sleepingnext
---
-
-CREATE DATABASE payments;
-
-ALTER DATABASE payments OWNER TO sleepingnext;
-
-
---
 -- Name: payments; Type: TABLE; Schema: public; Owner: sleepingnext
 --
 
-\connect payments;
 CREATE TABLE public.payments (
     id bigint NOT NULL,
     order_id bigint NOT NULL,
     type character(255) NOT NULL,
-    picture character varying(255) NULL,
+    picture character varying(255),
     status character varying(255) NOT NULL
 );
 
@@ -77,7 +67,7 @@ ALTER TABLE ONLY public.payments ALTER COLUMN id SET DEFAULT nextval('public.pay
 -- Data for Name: payments; Type: TABLE DATA; Schema: public; Owner: sleepingnext
 --
 
-COPY public.payments (id, order_id, type, status) FROM stdin;
+COPY public.payments (id, order_id, type, picture, status) FROM stdin;
 \.
 
 

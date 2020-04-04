@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 11.7 (Ubuntu 11.7-1.pgdg18.04+1)
--- Dumped by pg_dump version 11.7 (Ubuntu 11.7-1.pgdg18.04+1)
+-- Dumped from database version 11.7 (Ubuntu 11.7-2.pgdg18.04+1)
+-- Dumped by pg_dump version 11.7 (Ubuntu 11.7-2.pgdg18.04+1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -21,18 +21,9 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: orders; Type: DATABASE; Owner: sleepingnext
---
-
-CREATE DATABASE orders;
-
-ALTER DATABASE orders OWNER TO sleepingnext;
-
---
 -- Name: orders; Type: TABLE; Schema: public; Owner: sleepingnext
 --
 
-\connect orders;
 CREATE TABLE public.orders (
     id bigint NOT NULL,
     product_id bigint NOT NULL,

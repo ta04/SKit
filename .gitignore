@@ -1,12 +1,8 @@
 .idea
 /product-service/
-/product-service-cli/
 /order-service/
-/order-service-cli/
 /payment-service/
-/payment-service-cli/
+/payment-method-service/
 /user-service/
-/user-service-cli/
 /auth-service/
-/auth-service-cli/
 /api-gateway/

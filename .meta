@@ -1,15 +1,11 @@
 {
   "projects": {
-    "product-service": "git@github.com:SleepingNext/product-service.git",
-    "product-service-cli": "git@github.com:SleepingNext/product-service-cli.git",
-    "order-service": "git@github.com:SleepingNext/order-service.git",
-    "order-service-cli": "git@github.com:SleepingNext/order-service-cli.git",
-    "payment-service": "git@github.com:SleepingNext/payment-service.git",
-    "payment-service-cli": "git@github.com:SleepingNext/payment-service-cli.git",
-    "user-service": "git@github.com:G0tYou/user-service.git",
-    "user-service-cli": "git@github.com:G0tYou/user-service-cli.git",
-    "auth-service": "git@github.com:SleepingNext/auth-service.git",
-    "auth-service-cli": "git@github.com:SleepingNext/auth-service-cli.git",
-    "api-gateway": "git@github.com:SleepingNext/api-gateway.git"
+    "product-service": "git@github.com:ta04/product-service.git",
+    "order-service": "git@github.com:ta04/order-service.git",
+    "payment-service": "git@github.com:ta04/payment-service.git",
+    "payment-method-service": "git@github.com:ta04/payment-method-service.git",
+    "user-service": "git@github.com:ta04/user-service.git",
+    "auth-service": "git@github.com:ta04/auth-service.git",
+    "api-gateway": "git@github.com:ta04/api-gateway.git"
   }
 }

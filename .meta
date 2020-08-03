@@ -6,6 +6,7 @@
     "payment-method-service": "https://github.com/ta04/payment-method-service.git",
     "user-service": "https://github.com/ta04/user-service.git",
     "auth-service": "https://github.com/ta04/auth-service.git",
-    "api-gateway": "https://github.com/ta04/api-gateway.git"
+    "api-gateway": "https://github.com/ta04/api-gateway.git",
+    "brute-force-client": "https://github.com/ta04/brute-force-client.git"
   }
 }
